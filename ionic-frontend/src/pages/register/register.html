@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      New Account
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+
+
+    <ion-item>
+      <ion-input [(ngModel)]="name" name="name" type="text" placeholder="Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="email" name="email" type="text" placeholder="Email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="username" name="username" type="text" placeholder="Username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="password" name="password" type="password" placeholder="Password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]="verifyPassword" name="verifyPassword" type="password" placeholder="Verify password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button block color="secondary" (click)="onRegisterSubmit()">Register</button>
+  <button ion-button block color="danger" (click)="onCancel()">Cancel</button>
+</ion-content>
+<ion-spinner *ngIf="loading"></ion-spinner>

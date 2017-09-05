@@ -1,0 +1,4 @@
+/express-backend/config/aws.js
+/express-backend/config/database.js
+/express-backend/node_modules/
+/ionic-frontend/node_modules/

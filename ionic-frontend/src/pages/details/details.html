@@ -1,0 +1,57 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      {{item.title}}
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-card>
+    <img src="{{item.images.largeImageURL}}"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{item.title}}
+      </ion-card-title>
+      <ion-list>
+        <ion-item>
+          Tracked since {{item.date | date:'mediumDate'}}
+        </ion-item>
+        <ion-card-content>
+          <span>Last updated: {{item.lastUpdated | date:'shortDate'}} {{item.lastUpdated | date:'shortTime'}}</span>
+          <span>List Price: ${{(item.listPrice/100).toFixed(2)}}</span>
+          <span>Current Price: ${{(item.salePrice.price/100).toFixed(2)}}</span>
+        </ion-card-content>
+        <ion-card-header *ngIf="item.previousPrices.length == 0">
+          <strong>No price history available</strong>
+        </ion-card-header>
+        <div *ngIf="item.previousPrices.length > 0">
+          <ion-card-header>
+            <strong>Price History</strong>
+          </ion-card-header>
+          <ion-card-content>
+            <canvas #chartCanvas></canvas>
+          </ion-card-content>
+        </div>
+      </ion-list>
+      <!--<a ion-button target="_blank" href="{{item.detailPageURL}}">Buy on Amazon</a>-->
+    </ion-card-content>
+    <ion-row>
+    <ion-col>
+      <a target="_blank" href="{{item.detailPageURL}}" button ion-button icon-left clear small>
+        <ion-icon name="navigate"></ion-icon>
+        <div>Buy on Amazon</div>
+      </a>
+    </ion-col>
+    <ion-col>
+      <button (click)="showConfirm(item.asin)" ion-button icon-left clear small color="danger">
+        <ion-icon name="remove-circle"></ion-icon>
+        <div>Stop Tracking</div>
+      </button>
+    </ion-col>
+  </ion-row>
+  </ion-card>
+</ion-content>

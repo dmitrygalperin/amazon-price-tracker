@@ -1,0 +1,25 @@
+{
+  "name": "meanauthapp",
+  "version": "1.0.0",
+  "description": "MEAN stack authentication app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "dependencies": {
+    "amazon-product-api": "* ",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "deep-rename-keys": "^0.2.1",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "Dmitry Galperin",
+  "license": "ISC",
+  "devDependencies": {}
+}

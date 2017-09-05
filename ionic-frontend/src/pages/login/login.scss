@@ -1,0 +1,35 @@
+login {
+  img {
+    margin: auto;
+    display: block;
+  }
+
+  .login-title {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    margin: auto;
+    font-size: 200%;
+    display:table;
+    margin:0 auto;
+  }
+
+  .login-title {
+      display: block;
+      height: 200px;
+      width: 200px;
+      line-height: 60px;
+
+      -moz-border-radius: 30px;
+      border-radius: 30px;
+
+      background-color: #AAA;
+      color: white;
+      text-align: center;
+      font-size: 2.5em;
+  }
+  .logo-container {
+    height: 200px;
+    margin: auto;
+    display: block;
+    margin-top: 10px;
+  }
+}
